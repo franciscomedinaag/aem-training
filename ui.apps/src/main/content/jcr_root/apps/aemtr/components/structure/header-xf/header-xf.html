@@ -1,0 +1,9 @@
+<div class="${wcmmode.isEdit ? 'isAuthor' : 'no-author'}">
+	<div data-sly-use.fragment="com.adobe.cq.wcm.core.components.models.ExperienceFragment"
+	     data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+	     data-sly-test.localizedFragmentVariationPath="${inheritedPageProperties.headerExperienceFragmentLangPage || fragment.localizedFragmentVariationPath}"
+	     data-sly-resource="${@path=localizedFragmentVariationPath, selectors='content', wcmmode='disabled'}"
+	     class="cmp-experiencefragment cmp-experiencefragment--${fragment.name}">
+	</div>
+</div>
+<sly data-sly-call="${template.placeholder @ isEmpty=!localizedFragmentVariationPath, classAppend='cmp-dd-experiencefragment'}"></sly>

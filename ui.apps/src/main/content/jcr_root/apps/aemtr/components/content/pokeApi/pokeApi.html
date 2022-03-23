@@ -1,0 +1,46 @@
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#pokedexForm").submit(function(event){
+            event.preventDefault();
+            $.ajax({
+                url:$(this).attr('action'),
+                data: $(this).serializeArray(),
+                method:'GET',
+                dataType: 'json',
+                async: false,
+                success: function(data){
+
+                    var jsonData = JSON.parse(data);
+                    console.log("success: ", jsonData)
+                    $(".pokemonName").text(jsonData.name);
+                    $(".pokemonNumber").text("# "+jsonData.id);
+                    $(".pokemonImage").attr("src", jsonData.sprites.other.official_artwork.front_default);
+                    $(".pokemonTypes").text(jsonData.types.map(type => {
+                        return type.type.name;
+                    }));
+                },
+                error: function(error){
+                    alert("Pokemon no encontrado");
+                    console.log(error);
+                }
+            })
+        })
+    })
+
+</script>
+
+<h1>${properties.title}</h1>
+
+<form id="pokedexForm" action="${resource.path}.pokemonfinder.json" method="get" class="content">
+    <span for="pokemonNameInput">${properties.label}</span>
+    <input type="text" class="pokemonNameInput" id="pokemonName" name="pokemonName" />
+    <input type="submit" class="pokemonButton" id="pokemonButton" />
+</form>
+
+<div class="pokemonInfo">
+    <div class="pokemonName"></div>
+    <div class="pokemonNumber"></div>
+    <img class="pokemonImage" src=""/>
+    <div class="pokemonTypes"></div>
+</div>

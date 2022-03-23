@@ -1,0 +1,6 @@
+{
+  "mobile.resourceTypes": [
+    "aemtr/components/structure/page"
+  ],
+  "README": "Indicate which page resource types should display the mobile emulators."
+}

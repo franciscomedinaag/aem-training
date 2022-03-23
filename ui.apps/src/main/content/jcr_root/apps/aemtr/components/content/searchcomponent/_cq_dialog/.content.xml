@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2017 Adobe
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Page"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    size="L">
+                <items jcr:primaryType="nt:unstructured">
+                    <decorationTab
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Decoration"
+                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <title
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Title"
+                                            name="./title"/>
+                                </items>
+                            </column>
+                        </items>
+                    </decorationTab>
+                    <searchTab
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Search"
+                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <path jcr:primaryType="nt:unstructured"
+                                          sling:resourceType="cq/gui/components/coral/common/form/pagefield"
+                                          fieldLabel="Search Page Root"
+                                          name="./path"/>
+                                    <template jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                              fieldLabel="Template"
+                                              name="./template">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <content jcr:primaryType="nt:unstructured"
+                                                     selected="{Boolean}true"
+                                                     text="Content Page"
+                                                     value="/conf/aemtr/settings/wcm/templates/page-content"/>
+                                            <content2 jcr:primaryType="nt:unstructured"
+                                                     text="Test Template"
+                                                     value="/conf/aemtr/settings/wcm/templates/test-template"/>
+                                        </items>
+                                    </template>
+                                    <limit jcr:primaryType="nt:unstructured"
+                                           sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                           fieldLabel="Limit"
+                                           min="1"
+                                           step="1"
+                                           max="10"
+                                           name="./limit"/>
+                                    <additionalInfoFilter
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Additional Info Filter"
+                                            name="./additionalInfoFilter"/>
+                                </items>
+                            </column>
+                        </items>
+                    </searchTab>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

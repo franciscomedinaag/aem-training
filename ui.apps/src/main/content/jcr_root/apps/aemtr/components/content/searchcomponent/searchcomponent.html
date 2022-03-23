@@ -1,0 +1,9 @@
+<div class="container">
+    <h1 class="display-1">${properties.title ? properties.title : pageProperties.jcr:title}</h1>
+    <sly data-sly-use.model="com.vass.aemtr.core.models.SearchComponentModel">
+        <p data-sly-test="${model.additionalInfoFilter}">additional info filter: ${model.additionalInfoFilter}</p>
+        <div class="list-group" data-sly-list="${model.resultList}">
+            <a href="${item.path}" class="list-group-item list-group-item-action">${item.title}</a>
+        </div>
+    </sly>
+</div>

@@ -1,0 +1,14 @@
+<sly data-sly-use.model="com.vass.aemtr.core.models.AdditionalInfoSiblingsModel"></sly>
+<div>
+    <h1 class="title">Additional Info Siblings</h1>
+    <div data-sly-list.item="${model.additionalInfoList}">
+        <p>
+            - Additional Info: ${item}
+        </p>
+    </div>
+</div>
+
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.js @ categories='aemtr.additionalInfoSiblings'}" />
+    <sly data-sly-call="${clientlib.css @ categories='aemtr.additionalInfoSiblings'}" />
+</sly>

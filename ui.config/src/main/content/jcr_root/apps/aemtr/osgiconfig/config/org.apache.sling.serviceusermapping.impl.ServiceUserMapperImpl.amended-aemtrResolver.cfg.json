@@ -1,0 +1,7 @@
+{
+        "service.ranking:Integer":0,
+        "user.mapping":[
+        "aemtr.core:aemtr-system=aemtr-system",
+        "aemtr.core:aemtr-write-system=aemtr-write-system"
+        ]
+}
